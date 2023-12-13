@@ -1,0 +1,30 @@
+{% extends "home.html"%}
+{% block title%}translate{%endblock%}
+{% block content%}
+<h2>translate</h2>
+<form method="post" action="{%url "translate"%}">
+    {%csrf_token%}
+    <label for="From">From</label>
+    <select required name="From" id="From">
+        <option value="Auto">audo detect</option>
+        {%for lang in languages%}
+        <option value="{{lang}}">{{lang}}</option>
+        {%endfor%}
+    </select>
+    <br>
+    <label for="To">To</label>
+    <select required name="To" id="To">
+        {%for lang in languages%}
+        <option value="{{lang}}">{{lang}}</option>
+        {%endfor%}
+
+    </select>
+    <br>
+    <label for="Text">Text</label>
+    <textarea name="Text" id="Text" required></textarea>
+    <br>
+    <button type="submit">translate</button>
+</form>
+<label for="result">result</label>
+<textarea readonly id="result">{{result}}</textarea>
+{%endblock%}

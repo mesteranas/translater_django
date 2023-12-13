@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block  title %}home {%endblock%} -  translater</title>
+<style>
+    #navBar{list-style-type: none;color: red;
+</style>
+</head>
+<body>
+    <header id="header">
+        <h1>translater</h1>
+        <p><a href="#content">skip to content</a></p>
+        <p><a href="#footer">skip to footer</a></p>
+    </header>
+    <nav>
+        <h2>navigation bar</h2>
+        <ul id="navBar">
+        <li><a href="{% url 'homePage'%}">home</a></li>
+        <li><a href="{% url "translate"%}">translate</a></li>
+        <li><a href="{% url "contect"%}">contect</a></li>
+        <li><a href="{%url "about"%}">about</a></li>
+    </ul>
+    </nav>
+    {%block content%}
+    <section id="content">
+    <h1>welcom</h1>
+    </section>
+    {%endblock%}
+    <footer id="footer">
+        <h2>footer</h2>
+        <p><a href="#header">skip to top</a></p>
+    <p>&copy; 2023 mesteranas sites</p>
+    </footer>
+    <script></script>
+</body>
+</html>
